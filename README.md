@@ -25,3 +25,6 @@ spring.datasource.url=jdbc:h2:file:~/test
 spring.datasource.username=sa
 spring.datasource.password=
 spring.datasource.driver-class-name=org.h2.Driver
+
+#Keystore add .cer to .jks
+keytool -import -alias lenderservice -file PATH_TO_CER -keystore PATH_TO_TRUST_STORE
