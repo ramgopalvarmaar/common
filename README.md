@@ -28,3 +28,8 @@ spring.datasource.driver-class-name=org.h2.Driver
 
 #Keystore add .cer to .jks
 keytool -import -alias lenderservice -file PATH_TO_CER -keystore PATH_TO_TRUST_STORE
+
+#Setting jvm params from pom
+-Dspring.profiles.active=local
+-Dhttp.proxyHost=hostHere -Dhttp.proxyPort=portHere
+-Djavax.net.ssl.trustStore=src\\test\\resources\\jks file
