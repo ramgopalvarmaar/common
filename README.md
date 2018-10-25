@@ -12,7 +12,7 @@ for /f "tokens=5" %a in ('netstat -aon ^| find ":8080" ^| find "LISTENING"') do 
 git config --global http.sslVerify false
 
 #Create client from wsdl using java wsimport tool
-java -classpath "C:\Program Files\Java\jdk1.8.0_92\lib\tools.jar" -Djavax.net.ssl.trustStore="C:\\Users\\rvarmaar\\Pictures\\client-truststore.jks" -Djavax.net.ssl.trustStorePassword=changeit com.sun.tools.internal.ws.WsImport -s C:\\Users\\rvarmaar\\Pictures 
+java -classpath "C:\Program Files\Java\jdk1.8.0_92\lib\tools.jar" -Djavax.net.ssl.trustStore=trustStoreLocationInDoubleQuotesHere -Djavax.net.ssl.trustStorePassword=changeit com.sun.tools.internal.ws.WsImport -s DestinationFolderHere 
 url goes here
 
 
@@ -27,7 +27,7 @@ spring.datasource.password=
 spring.datasource.driver-class-name=org.h2.Driver
 
 #Keystore add .cer to .jks
-keytool -import -alias lenderservice -file PATH_TO_CER -keystore PATH_TO_TRUST_STORE
+keytool -import -alias aliasNameHere -file PATH_TO_CER -keystore PATH_TO_TRUST_STORE
 
 #Setting jvm params from pom
 -Dspring.profiles.active=local
